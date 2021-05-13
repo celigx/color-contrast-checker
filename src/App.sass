@@ -4,6 +4,7 @@
 h1, h2, h3, h4
   margin: 0
 
+// Heading
 .heading
   text-align: center
   margin: 60px 0
@@ -13,3 +14,93 @@ h1, h2, h3, h4
   .subtitle
     font-size: 18px
     color: #6c757d
+
+// TextColor and BackgroundColor input
+.inputContainer
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+  box-sizing: border-box
+  border: 1px solid #ddd
+  border-radius: 6px
+  padding: 8px 8px
+  // margin: 10px 0 0 0
+
+.hexContainer
+  display: flex
+  span
+    font-style: italic
+    padding: 0 3px 0 0
+
+.box
+  min-width: 32px
+  min-height: 32px
+  cursor: pointer
+
+input
+  display: block
+  border: none
+  border-radius: 4px
+  background: #fff
+  outline: none
+  font: inherit
+  text-transform: uppercase
+  width: inherit
+
+input:focus
+  border-color: #4298ef
+
+.colorInput
+  width: 50%
+
+// Popover Picker
+.picker
+  position: relative
+
+.swatch
+  width: 28px
+  height: 28px
+  border-radius: 8px
+  border: 3px solid #fff
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1)
+  cursor: pointer
+
+.popover
+  position: absolute
+  top: calc(100% + 2px)
+  left: 0
+  border-radius: 9px
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+
+.borderContainer
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 1px solid #ddd
+  border-radius: 6px
+  margin: 0 40px
+  .leftContainer
+    padding: 60px 30px
+  .textPicker
+    margin: 0 0 25px 0
+    h4
+      font-size: 12px
+      font-weight: 500
+      text-transform: uppercase
+      margin: 0 0 10px 0
+  .backgroundPicker
+    h4
+      font-size: 12px
+      font-weight: 500
+      text-transform: uppercase
+      margin: 0 0 10px 0
+
+@media screen and (min-width: 768px) 
+  .colorPicker
+    display: flex
+    flex-direction: row
+    .textPicker
+      padding: 0 30px 0 0
+    
+  
