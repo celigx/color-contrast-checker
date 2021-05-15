@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.sass';
 
+import { Heading } from './components/Heading';
 import { TextColorPicker } from './components/TextColorPicker';
 import { BackgroundColorPicker } from './components/BackgroundColorPicker';
 import { ContrastRatio } from './components/ContrastRatio';
@@ -12,12 +13,8 @@ const App = () => {
 
   return (
     <div className="app">
-
-      <div className="heading">
-        <h1 className="title">Color Contrast Checker</h1>
-        <p className="subtitle">Calculate the contrast ratio of text and background colors</p>
-      </div>
-
+      <Heading />
+      
       <div className="borderContainer">
         <div className="pickerContainer">
           <div className="colorPicker">
