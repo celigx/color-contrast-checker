@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="app">
       <Heading />
-      <div className="borderContainer">
+      <div className="mainContainer">
         <div className="pickerContainer">
           <div className="colorPicker">
             <TextColorPicker color={textColor} setColor={setTextColor} />
