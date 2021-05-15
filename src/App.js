@@ -20,7 +20,7 @@ const App = () => {
             <TextColorPicker color={textColor} setColor={setTextColor} />
             <BackgroundColorPicker color={backgroundColor} setColor={setBackgroundColor} />
           </div>
-          <ContrastRatio />
+          <ContrastRatio color={textColor} background={backgroundColor} />
         </div>
         <Output textColor={textColor} backgroundColor={backgroundColor} />
       </div>
