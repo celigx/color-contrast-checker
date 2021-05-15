@@ -21,7 +21,7 @@ export const ContrastRatio = () => {
 
       <div className="contrastBottom">
         <div className="smallTextScore">
-          <h1 className="smallTextTitle">Small trext</h1>
+          <h1 className="smallTextTitle">Small text</h1>
           <div className="stars">
             <HiStar size={20} />
             <HiStar size={20} />
@@ -29,7 +29,7 @@ export const ContrastRatio = () => {
           </div>
         </div>
         <div className="largeTextScore">
-          <h1 className="smallTextTitle">Large trext</h1>
+          <h1 className="smallTextTitle">Large text</h1>
           <div className="stars">
             <HiStar size={20} />
             <HiStar size={20} />
