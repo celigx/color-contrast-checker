@@ -4,6 +4,7 @@ import './App.sass';
 import { TextColorPicker } from './components/TextColorPicker';
 import { BackgroundColorPicker } from './components/BackgroundColorPicker';
 import { ContrastRatio } from './components/ContrastRatio';
+import { Output } from './components/Output';
 
 const App = () => {
   const [textColor, setTextColor] = useState('#2C423F')
@@ -36,15 +37,8 @@ const App = () => {
           <ContrastRatio />
         </div>
 
-        {/* Display output */}
-        <div className="outputContainer" style={{ background: backgroundColor }}>
-          <h1 className="outputTitle" style={{ color: textColor }}>Title name</h1>
-          <p className="outputText" style={{ color: textColor }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p className="outputAuthor" style={{ color: textColor }}>Author name</p>
-        </div>
-
+        <Output textColor={textColor} backgroundColor={backgroundColor} />
       </div>
-
     </div>
   );
 }
