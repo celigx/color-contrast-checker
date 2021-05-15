@@ -1,3 +1,5 @@
+$contrastColor: #003049
+
 .app
   font-family: 'Inter', sans-serif
 
@@ -25,7 +27,6 @@ h1, h2, h3, h4
   border: 1px solid #ddd
   border-radius: 6px
   padding: 8px 8px
-  // margin: 10px 0 0 0
 
 .hexContainer
   display: flex
@@ -79,10 +80,13 @@ input:focus
   justify-content: center
   border: 1px solid #ddd
   border-radius: 6px
-  margin: 0 40px
+  margin: 0 20px
   .pickerContainer
     flex: 1
+    order: 2
     padding: 30px
+  .colorPicker
+    margin-bottom: 30px
   .textPicker
     margin: 0 0 25px 0
     h4
@@ -102,7 +106,8 @@ input:focus
     flex: 1
     text-align: center
     border-radius: 0 6px 6px 0
-    padding: 30px
+    order: 1
+    padding: 60px 30px
     .outputTitle
       font-size: 36px
       font-weight: 400
@@ -113,13 +118,88 @@ input:focus
       font-weight: 600
       margin: 0
 
+  // Contrast
+  .contrastContainer
+    color: $contrastColor
+    border-radius: 6px
+    .contrastTop
+      background: #c7f9cc
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-between
+      text-align: center
+      border-radius: 6px 6px 0 0
+      padding: 30px
+      .contrastRatioNum
+        font-size: 32px
+        font-weight: 600
+        margin-bottom: 20px
+    .contrastScore
+      .scoreTitle
+        font-size: 18px
+        font-weight: 500
+        margin-bottom: 10px
+      
+  .contrastBottom
+    color: $contrastColor
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+    margin-top: 2px
+    .smallTextScore,
+    .largeTextScore
+      background: #c7f9cc
+      flex: 1
+      padding: 10px 30px
+    .smallTextScore
+      border-radius: 0
+      margin-bottom: 2px
+    .largeTextScore
+      border-radius: 0 0 6px 6px
+    .smallTextTitle
+      font-size: 14px
+      font-weight: 500
+      margin-bottom: 6px
+
+
+
 @media screen and (min-width: 768px)
   .borderContainer
     flex-direction: row
-  .colorPicker
-    display: flex
-    flex-direction: row
-    .textPicker
-      padding: 0 30px 0 0
+    margin: 0 40px
+    .pickerContainer
+      order: 1
+      .colorPicker
+        display: flex
+        flex-direction: row
+        margin-bottom: 30px
+        .textPicker
+          padding: 0 30px 0 0
+          margin: 0
+
+    // Contrast Output
+    .contrastContainer
+      .contrastTop
+        flex-direction: row
+        .contrastRatioNum
+          margin-bottom: 0
+      .contrastBottom
+        flex-direction: row
+        .smallTextScore
+          border-radius: 0 0 0 6px
+          margin: 0 1px 0 0
+        .largeTextScore
+          border-radius: 0 0 6px 0
+          margin: 0 0 0 1px
+          
+    .outputContainer
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      order: 2
+      padding: 30px
     
   

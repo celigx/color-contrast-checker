@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import './App.sass';
 
 import { TextColorPicker } from './components/TextColorPicker';
 import { BackgroundColorPicker } from './components/BackgroundColorPicker';
-import { useState } from 'react';
+import { ContrastRatio } from './components/ContrastRatio';
 
 const App = () => {
   const [textColor, setTextColor] = useState('#2C423F')
@@ -19,7 +20,6 @@ const App = () => {
       <div className="borderContainer">
         <div className="pickerContainer">
           <div className="colorPicker">
-
             {/* Text color hex input and color picker */}
             <div className="textPicker">
               <h4>Text Color</h4>
@@ -31,8 +31,9 @@ const App = () => {
               <h4>Background Color</h4>
               <BackgroundColorPicker color={backgroundColor} setColor={setBackgroundColor} />
             </div>
-
           </div>
+
+          <ContrastRatio />
         </div>
 
         {/* Display output */}
