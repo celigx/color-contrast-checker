@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../App.sass';
 
 import { HexColorInput } from 'react-colorful';
