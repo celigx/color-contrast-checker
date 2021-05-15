@@ -14,22 +14,14 @@ const App = () => {
   return (
     <div className="app">
       <Heading />
-
       <div className="borderContainer">
         <div className="pickerContainer">
           <div className="colorPicker">
             <TextColorPicker color={textColor} setColor={setTextColor} />
-
-            {/* Background color hex input and color picker */}
-            <div className="backgroundPicker">
-              <h4>Background Color</h4>
-              <BackgroundColorPicker color={backgroundColor} setColor={setBackgroundColor} />
-            </div>
+            <BackgroundColorPicker color={backgroundColor} setColor={setBackgroundColor} />
           </div>
-
           <ContrastRatio />
         </div>
-
         <Output textColor={textColor} backgroundColor={backgroundColor} />
       </div>
     </div>
