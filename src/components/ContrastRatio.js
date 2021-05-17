@@ -85,6 +85,60 @@ export const ContrastRatio = ({ color, background }) => {
     }
   }
 
+  const starRating = () => {
+    if (contrastRatio >= 12 && contrastRatio <= 21) {
+      return (
+        <div>
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} />
+        </div>
+      )
+    } else if (contrastRatio >= 7 && contrastRatio < 12) {
+      return (
+        <div>
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} color={'#889EA9'} />
+        </div>
+      )
+    } else if (contrastRatio >= 4.50 && contrastRatio < 7) {
+      return (
+        <div>
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} color={'#889EA9'} />
+          <HiStar size={24} color={'#889EA9'} />
+        </div>
+      )
+    } else if (contrastRatio >= 3 && contrastRatio < 4.50) {
+      return (
+        <div>
+          <HiStar size={24} />
+          <HiStar size={24} />
+          <HiStar size={24} color={'#889EA9'} />
+          <HiStar size={24} color={'#889EA9'} />
+          <HiStar size={24} color={'#889EA9'} />
+        </div>
+      )
+    } else if (contrastRatio >= 1 && contrastRatio < 3) {
+      return (
+        <div>
+          <HiStar size={24} />
+          <HiStar size={24} color={'#889EA9'} />
+          <HiStar size={24} color={'#889EA9'} />
+          <HiStar size={24} color={'#889EA9'} />
+          <HiStar size={24} color={'#889EA9'} />
+        </div>
+      )
+    }
+  }
+
   return (
     <div className="contrastContainer">
 
@@ -93,11 +147,7 @@ export const ContrastRatio = ({ color, background }) => {
         <div className="contrastScore">
           <h1 className="scoreTitle">{textRating(contrastRatio)}</h1>
           <div className="stars">
-            <HiStar size={24} />
-            <HiStar size={24} />
-            <HiStar size={24} />
-            <HiStar size={24} />
-            <HiStar size={24} />
+            {starRating(contrastRatio)}
           </div>
         </div>
       </div>
