@@ -51,10 +51,24 @@ export const ContrastRatio = ({ color, background }) => {
     }
   }
 
+  const colorRating = () => {
+    if (contrastRatio >= 12 && contrastRatio <= 21) {
+      return '#C7F9CC'
+    } else if (contrastRatio >= 7 && contrastRatio < 12) {
+      return '#C7F9CC'
+    } else if (contrastRatio >= 4.50 && contrastRatio < 7) {
+      return '#FFF4AA'
+    } else if (contrastRatio >= 3 && contrastRatio < 4.50) {
+      return '#FDC4C4'
+    } else if (contrastRatio >= 1 && contrastRatio < 3) {
+      return '#FDC4C4'
+    }
+  }
+
   return (
     <div className="contrastContainer">
 
-      <div className="contrastTop">
+      <div className="contrastTop" style={{ background: colorRating(contrastRatio) }}>
         <h1 className="contrastRatioNum">{contrastRatio}</h1>
         <div className="contrastScore">
           <h1 className="scoreTitle">{textRating(contrastRatio)}</h1>
