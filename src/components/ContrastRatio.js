@@ -139,6 +139,34 @@ export const ContrastRatio = ({ color, background }) => {
     }
   }
 
+  const smTextStarRating = () => {
+    if (contrastRatio >= 7 && contrastRatio <= 21) {
+      return (
+        <div>
+          <HiStar size={20} />
+          <HiStar size={20} />
+          <HiStar size={20} />
+        </div>
+      )
+    } else if (contrastRatio > 4.50 && contrastRatio < 7) {
+      return (
+        <div>
+          <HiStar size={20} />
+          <HiStar size={20} />
+          <HiStar size={20} color={'#889EA9'} />
+        </div>
+      )
+    } else if (contrastRatio >= 1 && contrastRatio <= 4.50) {
+      return (
+        <div>
+          <HiStar size={20} />
+          <HiStar size={20} color={'#889EA9'} />
+          <HiStar size={20} color={'#889EA9'} />
+        </div>
+      )
+    }
+  }
+
   return (
     <div className="contrastContainer">
 
@@ -156,9 +184,7 @@ export const ContrastRatio = ({ color, background }) => {
         <div className="smallTextScore" style={{ background: smallColorRating(contrastRatio) }}>
           <h1 className="smallTextTitle">Small text</h1>
           <div className="stars">
-            <HiStar size={20} />
-            <HiStar size={20} />
-            <HiStar size={20} />
+            {smTextStarRating(contrastRatio)}
           </div>
         </div>
         <div className="largeTextScore" style={{ background: largeColorRating(contrastRatio) }}>
