@@ -35,7 +35,21 @@ export const ContrastRatio = ({ color, background }) => {
   }
 
   // If the number is 21 or 1, don't add decimals
-  const contrastRatio = contrast(rgbColor, rgbBackground) === 21 || contrast(rgbColor, rgbBackground) === 1 ? contrast(rgbColor, rgbBackground) : contrast(rgbColor, rgbBackground).toFixed(2)
+  const contrastRatio = contrast(rgbColor, rgbBackground) === 21 || contrast(rgbColor, rgbBackground) === 1 ? contrast(rgbColor, rgbBackground) : contrast(rgbColor, rgbBackground).toFixed(2);
+
+  const textRating = () => {
+    if (contrastRatio >= 12 && contrastRatio <= 21) {
+      return 'Excellent'
+    } else if (contrastRatio >= 7 && contrastRatio < 12) {
+      return 'Very good'
+    } else if (contrastRatio >= 4.50 && contrastRatio < 7) {
+      return 'Good'
+    } else if (contrastRatio >= 3 && contrastRatio < 4.50) {
+      return 'Poor'
+    } else if (contrastRatio >= 1 && contrastRatio < 3) {
+      return 'Very poor'
+    }
+  }
 
   return (
     <div className="contrastContainer">
@@ -43,7 +57,7 @@ export const ContrastRatio = ({ color, background }) => {
       <div className="contrastTop">
         <h1 className="contrastRatioNum">{contrastRatio}</h1>
         <div className="contrastScore">
-          <h1 className="scoreTitle">Very Good</h1>
+          <h1 className="scoreTitle">{textRating(contrastRatio)}</h1>
           <div className="stars">
             <HiStar size={24} />
             <HiStar size={24} />
