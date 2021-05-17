@@ -65,6 +65,16 @@ export const ContrastRatio = ({ color, background }) => {
     }
   }
 
+  const smallColorRating = () => {
+    if (contrastRatio >= 7 && contrastRatio <= 21) {
+      return '#C7F9CC'
+    } else if (contrastRatio > 4.50 && contrastRatio < 7) {
+      return '#FFF4AA'
+    } else if (contrastRatio >= 1 && contrastRatio <= 4.50) {
+      return '#FDC4C4'
+    }
+  }
+
   return (
     <div className="contrastContainer">
 
@@ -83,7 +93,7 @@ export const ContrastRatio = ({ color, background }) => {
       </div>
 
       <div className="contrastBottom">
-        <div className="smallTextScore">
+        <div className="smallTextScore" style={{ background: smallColorRating(contrastRatio) }}>
           <h1 className="smallTextTitle">Small text</h1>
           <div className="stars">
             <HiStar size={20} />
