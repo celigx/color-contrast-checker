@@ -8,7 +8,7 @@ import { ContrastRatio } from './components/ContrastRatio';
 import { Output } from './components/Output';
 
 const App = () => {
-  const [textColor, setTextColor] = useState('#2C423F')
+  const [textColor, setTextColor] = useState('#1B2524')
   const [backgroundColor, setBackgroundColor] = useState('#AEECEF')
 
   return (
