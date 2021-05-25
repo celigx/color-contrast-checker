@@ -2,13 +2,35 @@ import '../App.sass';
 import { HiStar } from "react-icons/hi";
 
 export const ContrastRatio = ({ color, background }) => {
-  // Remove # from the hex color and match characters in pairs of two => '2C 42 3F'
-  const hexColor = color.slice(1).match(/.{1,2}/g);
-  const hexBackground = background.slice(1).match(/.{1,2}/g);
+  const textColor = () => {
+    // Remove # from the hex code
+    const hexCode = color.slice(1);
+    // Convert to 6 digit code => 'convert F82 to FF8822' and match characters in pairs of two => '2C 42 3F'
+    const threeDigit = hexCode.split('').map(x => x + x).join('').match(/.{1,2}/g);
+    // Match characters in pairs of two => '2C 42 3F'
+    const sixDigit = hexCode.match(/.{1,2}/g);
+    // If hex code is 3 digit long, return threeDigit, else return sixDigit
+    const hexColor = hexCode.length === 3 ? threeDigit : sixDigit;
+    // Convert hex color code to rgb
+    const rgbColor = hexColor.map(hex => parseInt(hex, 16));
 
-  // Convert hex color to rgb
-  const rgbColor = hexColor.map(hex => parseInt(hex, 16));
-  const rgbBackground = hexBackground.map(hex => parseInt(hex, 16));
+    return rgbColor
+  }
+
+  const backgroundColor = () => {
+    // Remove # from the hex code
+    const hexCode = background.slice(1);
+    // Convert to 6 digit code => 'convert 25F to 2255FF' and match characters in pairs of two => '2C 42 3F'
+    const threeDigit = hexCode.split('').map(x => x + x).join('').match(/.{1,2}/g);
+    // Match characters in pairs of two => '2C 42 3F'
+    const sixDigit = hexCode.match(/.{1,2}/g);
+    // If hex code is 3 digit long, return threeDigit, else return sixDigit
+    const hexColor = hexCode.length === 3 ? threeDigit : sixDigit;
+    // Convert hex color code to rgb
+    const rgbColor = hexColor.map(hex => parseInt(hex, 16));
+
+    return rgbColor
+  }
 
   // Calculate luminance
   // https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
@@ -35,7 +57,7 @@ export const ContrastRatio = ({ color, background }) => {
   }
 
   // If the number is 21 or 1, don't add decimals
-  const contrastRatio = contrast(rgbColor, rgbBackground) === 21 || contrast(rgbColor, rgbBackground) === 1 ? contrast(rgbColor, rgbBackground) : contrast(rgbColor, rgbBackground).toFixed(2);
+  const contrastRatio = contrast(textColor(), backgroundColor()) === 21 || contrast(textColor(), backgroundColor()) === 1 ? contrast(textColor(), backgroundColor()) : contrast(textColor(), backgroundColor()).toFixed(2);
 
   const textRating = () => {
     if (contrastRatio >= 12 && contrastRatio <= 21) {
