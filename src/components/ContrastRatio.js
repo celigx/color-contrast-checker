@@ -4,7 +4,7 @@ import { HiStar } from "react-icons/hi";
 export const ContrastRatio = ({ color, background }) => {
   const textColor = () => {
     // Remove # from the hex code
-    const hexCode = color.slice(1);
+    const hexCode = color.replace(/\W/g, '');
     // Convert to 6 digit code => 'convert F82 to FF8822' and match characters in pairs of two => '2C 42 3F'
     const threeDigit = hexCode.split('').map(x => x + x).join('').match(/.{1,2}/g);
     // Match characters in pairs of two => '2C 42 3F'
@@ -19,7 +19,7 @@ export const ContrastRatio = ({ color, background }) => {
 
   const backgroundColor = () => {
     // Remove # from the hex code
-    const hexCode = background.slice(1);
+    const hexCode = background.replace(/\W/g, '');
     // Convert to 6 digit code => 'convert 25F to 2255FF' and match characters in pairs of two => '2C 42 3F'
     const threeDigit = hexCode.split('').map(x => x + x).join('').match(/.{1,2}/g);
     // Match characters in pairs of two => '2C 42 3F'
