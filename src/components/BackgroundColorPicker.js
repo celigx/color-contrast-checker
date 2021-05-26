@@ -12,7 +12,7 @@ export const BackgroundColorPicker = ({ color, setColor }) => {
         <div className="hexContainer">
           <span>#</span>
           {/* On input blur, convert 3-digit hex color code to 6-digit */}
-          <HexColorInput color={color} onChange={setColor} className="colorInput" onBlur={ () => convertHexCode({ color, setColor }) } maxLength={6} /> 
+          <HexColorInput color={color} onChange={setColor} onBlur={ () => convertHexCode({ color, setColor }) } maxLength={6} /> 
         </div>
         <PopoverPicker color={color} onChange={setColor} />
       </div>
