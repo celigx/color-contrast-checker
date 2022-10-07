@@ -1,6 +1,7 @@
 {
   "name": "color-contrast-checker",
-  "version": "0.1.0",
+  "homepage": "https://celigx.github.io/color-contrast-checker",
+  "version": "1.1.2",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
