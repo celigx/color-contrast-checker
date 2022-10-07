@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/color-contrast-checker/static/css/main.80d32ac8.chunk.css",
+    "main.js": "/color-contrast-checker/static/js/main.11919f7e.chunk.js",
+    "main.js.map": "/color-contrast-checker/static/js/main.11919f7e.chunk.js.map",
+    "runtime-main.js": "/color-contrast-checker/static/js/runtime-main.4de03eab.js",
+    "runtime-main.js.map": "/color-contrast-checker/static/js/runtime-main.4de03eab.js.map",
+    "static/js/2.9ffc7737.chunk.js": "/color-contrast-checker/static/js/2.9ffc7737.chunk.js",
+    "static/js/2.9ffc7737.chunk.js.map": "/color-contrast-checker/static/js/2.9ffc7737.chunk.js.map",
+    "static/js/3.a5c2622d.chunk.js": "/color-contrast-checker/static/js/3.a5c2622d.chunk.js",
+    "static/js/3.a5c2622d.chunk.js.map": "/color-contrast-checker/static/js/3.a5c2622d.chunk.js.map",
+    "index.html": "/color-contrast-checker/index.html",
+    "static/css/main.80d32ac8.chunk.css.map": "/color-contrast-checker/static/css/main.80d32ac8.chunk.css.map",
+    "static/js/2.9ffc7737.chunk.js.LICENSE.txt": "/color-contrast-checker/static/js/2.9ffc7737.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4de03eab.js",
+    "static/js/2.9ffc7737.chunk.js",
+    "static/css/main.80d32ac8.chunk.css",
+    "static/js/main.11919f7e.chunk.js"
+  ]
+}
